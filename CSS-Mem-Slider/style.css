@@ -36,7 +36,12 @@ label {
 }
 
 .label:hover {
-    background-color: #DFCA6B;
+    background-color: #333333;
+}
+
+.label:active {
+    width: 1rem;
+    height: 1rem;
 }
 
 
