@@ -21,10 +21,9 @@ label {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;   
-    margin: 0.2rem;
 }
 
 .label {
@@ -44,7 +43,6 @@ label {
     height: 1rem;
 }
 
-
 #slide1:checked ~ .slider .controls label .label1 {
     background-color: #DFCA6B;
 }
@@ -62,14 +60,14 @@ label {
 }
 
 .slider {
+    width: 60%;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
+    flex-direction: column;   
 }
 
 .container {
-    width: 60%;
+    width: 100%;
     margin: 0 auto;
     overflow: hidden;
     border-radius: 3%;
@@ -111,42 +109,94 @@ label {
     margin-right: -75%;
 }
 
+.footer {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.controls {
+    display: flex;
+}
+
 .descriptions {
     display: flex;
-    width: 400%;
-    text-align: center;
+    flex-direction: row;
     margin: 1.5rem 0;    
-    font-size: 2rem;
+    font-size: 1.3rem;
 }
 
 .descriptions p {
-    width: 25%;
     background: #A6D2AC;
     transition: all 0.3s linear;
+    display: none;
 }
 
-#slide1:checked ~ .slider .descriptions p:nth-child(1) {
+#slide1:checked ~ .slider .footer .descriptions p:nth-child(1) {
     margin-right: 0;
+    display: block;
+    animation: title 0.2s linear;
 }
 
-#slide2:checked ~ .slider .descriptions p:nth-child(1) {
+
+#slide2:checked ~ .slider .footer .descriptions p:nth-child(1) {
     margin-right: -25%;
 }
 
-#slide3:checked ~ .slider .descriptions p:nth-child(1) {
+#slide2:checked ~ .slider .footer .descriptions p:nth-child(2) {
+    display: block;
+    animation: title 0.2s linear;
+}
+
+#slide3:checked ~ .slider .footer .descriptions p:nth-child(1) {
     margin-right: -50%;
 }
 
-#slide4:checked ~ .slider .descriptions p:nth-child(1) {
+#slide3:checked ~ .slider .footer .descriptions p:nth-child(3) {
+    display: block;
+    animation: title 0.2s linear;
+}
+
+#slide4:checked ~ .slider .footer .descriptions p:nth-child(1) {
     margin-right: -75%;
 }
 
+#slide4:checked ~ .slider .footer .descriptions p:nth-child(4) {
+    display: block;
+    animation: title 0.2s linear;
+}
+
 @media (max-width: 767px) {
-    .container {
-        width: 100%;
+    .slider {
+        width: 90%;
+    }
+
+    .controls {
+        padding: 1rem;
     }
     
     label {
         margin: 0;
+    }
+
+    .footer {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    
+    .descriptions {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@keyframes title {
+    from {
+        transform: translateY(100%);
+    }
+
+    to {
+        transform: translateY(0%);
     }
 }
