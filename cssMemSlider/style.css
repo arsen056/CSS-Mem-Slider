@@ -34,11 +34,11 @@ label {
     transition: all 0.2s linear; 
 }
 
-.label:hover {
-    background-color: #333333;
+label:hover .label {
+    border-color: #111111;
 }
 
-.label:active {
+label:active .label {
     width: 1rem;
     height: 1rem;
 }
