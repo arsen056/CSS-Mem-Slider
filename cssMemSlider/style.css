@@ -36,6 +36,7 @@ label {
 
 label:hover .label {
     border-color: #111111;
+    background-color: #111111;
 }
 
 label:active .label {
